@@ -5,17 +5,16 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">تسجيل الدخول بالأدمن</div>
+                    <div class="card-header">تسجيل دخول الادمن </div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('save.login') }}">
+                        <form method="POST" action="{{ route('save.admin.login') }}">
                             @csrf
-
                             <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">Email Or Mobile</label>
+                                <label for="email" class="col-md-4 col-form-label text-md-right"> Email Or mobile</label>
 
                                 <div class="col-md-6">
-                                    <input id="identify" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autofocus>
+                                    <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required  >
 
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -24,7 +23,6 @@
                                     @enderror
                                 </div>
                             </div>
-
 
                             <div class="form-group row">
                                 <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
